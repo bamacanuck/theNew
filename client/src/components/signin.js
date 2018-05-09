@@ -7,7 +7,7 @@ import { auth } from '../firebase/index';
 import * as routes from '../constants/routes';
 
 const SignInPage = ({ history }) =>
-  <div className="jumbotron">
+  <div className="jumbotron" class="jumboback">
     <h1>Sign In</h1>
     <SignInForm history={history} />
     <PasswordForgetLink />

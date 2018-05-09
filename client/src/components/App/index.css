@@ -1,3 +1,9 @@
 .app {
   margin: 20px;
 }
+body{
+  background-image: url("http://commonground.coop/sites/default/files/vegetables%20wooden%20background-croppedx2.jpg");
+}
+.jumboback{
+  background: rgba(204, 204, 204, 0.5);
+}

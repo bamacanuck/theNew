@@ -23,7 +23,7 @@ class HomePage extends Component {
 
     return (
       <div>
-        <h1 className="jumbotron">Home</h1>
+        <h1 className="jumbotron" class="jumboback">Home</h1>
         <p>The Home Page is accessible by every signed in user.</p>
 
         { !!users && <UserList users={users} /> }

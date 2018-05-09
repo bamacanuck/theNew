@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import withAuthorization from './Session/withAuthorization';
 import { db } from '../firebase/index';
+import axios from "axios";
 
 class HomePage extends Component {
   constructor(props) {

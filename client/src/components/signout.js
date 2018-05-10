@@ -1,13 +1,12 @@
 import React from 'react';
-// import Button from 'react-bootstrap/lib/button';
-
+import { Button } from 'react-bootstrap';
 import { auth } from '../firebase/index';
 
 const SignOutButton = () =>
-  <button color="link"
+  <Button color="link"
     onClick={auth.doSignOut}
   >
     Sign Out
-  </button>
+  </Button>
 
 export default SignOutButton;

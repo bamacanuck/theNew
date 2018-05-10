@@ -10,7 +10,7 @@ import SignUpPage from '../signup';
 import SignInPage from '../signin';
 import PasswordForgetPage from '../forgetPassword';
 import HomePage from '../home';
-import List from '../List';
+import List from '../list';
 import AccountPage from '../account';
 import withAuthentication from '../Session/withAuthentication';
 import * as routes from '../../constants/routes';

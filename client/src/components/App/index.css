@@ -7,3 +7,7 @@ body{
 .jumboback{
   background: rgba(204, 204, 204, 0.5);
 }
+
+.startPad{
+	margin: 9pt;
+}

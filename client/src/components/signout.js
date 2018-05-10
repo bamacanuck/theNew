@@ -4,7 +4,7 @@ import React from 'react';
 import { auth } from '../firebase/index';
 
 const SignOutButton = () =>
-  <button color="link"
+  <button class="startPad" color="link"
     onClick={auth.doSignOut}
   >
     Sign Out

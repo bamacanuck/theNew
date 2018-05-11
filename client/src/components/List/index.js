@@ -1,9 +1,6 @@
 import React, {Component} from "react";
-import $ from 'jquery'
-//import * as householdApi from '../../../routes/api/household';
-//import * as userApi from '../../../routes/api/user';
+import $ from 'jquery';
 
-//import Client from "./Client";
 
 const MATCHING_ITEM_LIMIT = 25;
 
@@ -41,7 +38,7 @@ class List extends React.Component {
                         });
                         */
         }
-    };
+    }
 
     handleSearchCancel() {
         this.setState({
@@ -49,7 +46,7 @@ class List extends React.Component {
             showRemoveIcon: false,
             searchValue: ""
         });
-    };
+    }
 
 
     componentDidMount() {
@@ -61,34 +58,43 @@ class List extends React.Component {
         // this.setState({
         //     item: house.shoppingList
         // })
-    };
+    }
 
-    addItem = (click) => {
-        console.log("I'm in AddClick");
+
+
+
+    addItem = (click) => 
+    {
+        
         $.ajax({
-            url: 'http://localhost:8080/api/addItem', type: 'GET',
+            url: '/api/addItem', type: 'GET',
             data: {
-                "houseID": "1234", "name": "milk",
+                "houseID": "1234", "name": "bread",
                 "quantity": "1", "upcCode": "", "note": "", "marked": false, "imageURL": ""
             }
         }).done(function (result) {
             console.log("Did addItem");
+            console.log("Result is ");
+            console.log(result);
 
-        }).fail(function (data) {
+        }).fail(function (error) {
             console.log("There was an error");
-            console.log("status:  " + data.status);
-            console.log("status text:  " + data.statusText);
+            console.log("status:  " + error.status);
+            
         });
 
-    };
+    };  
+
     editItem = (click) => {
         console.log("I'm in EditClick");
         $.ajax({url: 'api/editItem', type: 'GET',
-            data: {"houseID":"1234","name":"milk",
-                "quantity":"2","upcCode":"","note":"","marked":false,"imageURL":""}}).
+            data: {"houseID":"1234","name":"bread",
+                "quantity":"4","upcCode":"","note":"","marked":false,"imageURL":""}}).
 
         done (function(result){
             console.log("Did editItem");
+            console.log("Result is ");
+            console.log(result);
 
         }).
         fail(function(data)
@@ -99,14 +105,18 @@ class List extends React.Component {
 
         });
     };
+
+
     deleteItem= (click) => {
         console.log("I'm in DeleteClick");
         $.ajax({url: 'api/deleteItem', type: 'GET',
-            data: {"houseID":"1234","name":"milk",
+            data: {"houseID":"1234","name":"bread",
                 "quantity":"2","upcCode":"","note":"","marked":false,"imageURL":""}}).
 
         done (function(result){
             console.log("Did deleteItem");
+            console.log("Result is ");
+            console.log(result);
 
         }).
         fail( function(data)

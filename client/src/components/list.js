@@ -22,10 +22,10 @@ class List extends React.Component {
 
 
 
-    addItem = () => {
+    addItem = (click) => {
         console.log("I'm in AddClick");
         $.ajax({
-            url: 'http://localhost:8080/api/addItem', type: 'GET',
+            url: 'api/addItem', type: 'POST',
             data: {
                 "houseID": "1234", "name": this.productName,
                 "quantity": this.quantity, "upcCode": "", "note": "", "marked": false, "imageURL": ""
@@ -40,7 +40,7 @@ class List extends React.Component {
         });
 
     };
-    editItem = () => {
+    editItem = (click) => {
         console.log("I'm in EditClick");
         $.ajax({
             url: 'api/editItem', type: 'GET',
@@ -58,7 +58,7 @@ class List extends React.Component {
 
         });
     };
-    deleteItem = () => {
+    deleteItem = (click) => {
         console.log("I'm in DeleteClick");
         $.ajax({
             url: 'api/deleteItem', type: 'GET',
@@ -152,17 +152,17 @@ class List extends React.Component {
                 <Form inline>
                     <FormGroup>
                         <Col smOffset={2} sm={10}>
-                            <Button type="submit" onClick={this.addItem()}>Add Item</Button>
+                            <Button type="submit" id = "addBtn" onClick={this.addItem}>Add Item</Button>
                         </Col>
                     </FormGroup>
                     <FormGroup>
                         <Col smOffset={2} sm={10}>
-                            <Button type="submit" onClick={this.editItem()}>Update Item</Button>
+                            <Button type="submit" id = "editBtn" onClick={this.editItem}>Update Item</Button>
                         </Col>
                     </FormGroup>
                     <FormGroup>
                         <Col smOffset={2} sm={10}>
-                            <Button type="submit" onClick={this.deleteItem()}>Delete Item</Button>
+                            <Button type="submit" id = "deleteBtn" onClick={this.deleteItem}>Delete Item</Button>
                         </Col>
                     </FormGroup>
                 </Form>

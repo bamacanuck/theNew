@@ -14,8 +14,6 @@ class List extends React.Component {
         this.handleChange = this.handleChange.bind(this);
 
         this.state = {
-            item: [],
-            showRemoveIcon: false,
             value: ''
         };
     }
@@ -86,46 +84,10 @@ class List extends React.Component {
     }
 
     handleChange(e) {
-        const value = e.target.value;
-
-        this.setState({
-            value: value
-        });
-
-        if (value === "") {
-            this.setState({
-                item: [],
-                showRemoveIcon: false
-            });
-        } 
-        else {
-            this.setState({
-                showRemoveIcon: true
-            });
-        }
-    }
-    handleSearchCancel() {
-        this.setState({
-            item: [],
-            showRemoveIcon: false,
-            value: ""
-        });
+        this.setState({value: e.target.value});
     }
 
     render() {
-
-        const {showRemoveIcon, item} = this.state;
-        const removeIconStyle = showRemoveIcon ? {} : {visibility: "hidden"};
-
-        const foodRows = item.map((food, idx) => (
-            <tr key={idx} onClick={() => this.props.onFoodClick(food)}>
-                <td>No Description</td>
-                <td className="right aligned">{food.name}</td>
-                <td className="right aligned">{food.brand}</td>
-
-            </tr>
-        ));
-
         return (
             <div>
                 <Form horizontal>

@@ -7,7 +7,7 @@ const ItemList = require('../classes/ItemList.js');
 
 var app_routes = express.Router();
 
-let api_route_debug = false;
+let api_route_debug = true;
 
 
 
@@ -16,6 +16,8 @@ app_routes.get("/api/addItem/", function(req, res)
     let newListString = "";
     let recordExists = false;
     let itemListObject = new ItemList();
+    console.log(itemListObject);
+    console.log(req);
     let listItemObject = new ListItem(req.query.name);
     let failed = false;
     listItemObject.fromString(req.query);

@@ -25,7 +25,7 @@ class List extends React.Component {
     addItem = (click) => {
         console.log("I'm in AddClick");
         $.ajax({
-            url: 'api/addItem', type: 'POST',
+            url: '/api/addItem', type: 'POST',
             data: {
                 "houseID": "1234", "name": this.productName,
                 "quantity": this.quantity, "upcCode": "", "note": "", "marked": false, "imageURL": ""
@@ -43,7 +43,7 @@ class List extends React.Component {
     editItem = (click) => {
         console.log("I'm in EditClick");
         $.ajax({
-            url: 'api/editItem', type: 'GET',
+            url: '/api/editItem', type: 'GET',
             data: {
                 "houseID": "1234", "name": this.productName,
                 "quantity": this.quantity, "upcCode": "", "note": "", "marked": false, "imageURL": ""
@@ -61,7 +61,7 @@ class List extends React.Component {
     deleteItem = (click) => {
         console.log("I'm in DeleteClick");
         $.ajax({
-            url: 'api/deleteItem', type: 'GET',
+            url: '/api/deleteItem', type: 'GET',
             data: {
                 "houseID": "1234", "name": this.productName,
                 "quantity": this.quantity, "upcCode": "", "note": "", "marked": false, "imageURL": ""

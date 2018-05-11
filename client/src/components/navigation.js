@@ -6,24 +6,16 @@ import { Link } from 'react-router-dom';
 import AuthUserContext from './Session/AuthUserContext';
 import SignOutButton from './signout';
 import * as routes from '../constants/routes';
-import { bootstrapUtils } from 'react-bootstrap/lib/utils';
-
-bootstrapUtils.addStyle(Navbar, 'custom');
-
 
 const Navigation = () =>
-  <div>
-    <AuthUserContext.Consumer>
-      {authUser => authUser
-        ? <NavigationAuth />  
-        : <NavigationNonAuth />
-      }
-    </AuthUserContext.Consumer>
-  </div>
+  <AuthUserContext.Consumer>
+    {authUser => authUser
+      ? <NavigationAuth />
+      : <NavigationNonAuth />
+    }
+  </AuthUserContext.Consumer>
 
 const NavigationAuth = () =>
-<div>
-   <style type="text/css">
   <Navbar>
   <Navbar.Header>
     <Navbar.Brand>
@@ -38,8 +30,7 @@ const NavigationAuth = () =>
     <li><SignOutButton /></li>
     </Nav>
 </Navbar>;
-</style>
-</div>
+
 const NavigationNonAuth = () =>
 
 <Navbar>

@@ -124,13 +124,16 @@ app_routes.get("/api/addItem/", function(req, res)
 
     then(function()
     {
-        db.house.update({theList: newListString},
+        if(failed === false)
         {
-        where:
+            db.house.update({theList: newListString},
             {
-                houseID: "1234"
-            }
-        });
+            where:
+                {
+                    houseID: "1234"
+                }
+            });
+        }
 
         console.log("failed is " + failed);
         if(failed === false)

@@ -11,6 +11,7 @@ import SignInPage from '../signin';
 import PasswordForgetPage from '../forgetPassword';
 import HomePage from '../home';
 import List from '../List';
+import ListItem from '../ListItemComponent';
 import AccountPage from '../account';
 import withAuthentication from '../Session/withAuthentication';
 import * as routes from '../../constants/routes';

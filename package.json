@@ -1,7 +1,6 @@
 {
   "name": "bbbbbbbb",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,5 +14,14 @@
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
     "sequelize": "^4.37.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bamacanuck/theNew.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bamacanuck/theNew/issues"
+  },
+  "homepage": "https://github.com/bamacanuck/theNew#readme",
+  "description": ""
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import  ListItem from "./ListItemComponent";
+import $ from 'jquery';
 
 
 // The css styling for this component is in the ../styles/TextAreaType1.css file
@@ -37,7 +38,36 @@ class ItemList extends React.Component
 
 	    this.handle_Add = (index) =>
 	    {
-	    	console.log("I'm in add");
+	    	console.log("I'm in add.  No, really");
+
+	    	// I'm going to put the AJAX call here, but at first, I'm 
+	    	// not going to let the AJAX call impact what happens here already.
+	    	// Note:  At first, the add method ignores the quantity field
+	    	// ****************************************************
+	    	console.log("Calling the ajax add method");
+	    	$.ajax({
+            url: '/api/addItem', type: 'GET',
+            data: {
+                "houseID": "1234", "name": this.refs.myInput.value,
+                "quantity": "1", "upcCode": "", "note": "", "marked": false, "imageURL": ""
+            }
+	        }).
+	        done(function (result) {
+	            console.log("Did addItem");
+	            console.log("Result is ");
+	            console.log(result);
+
+	        }).
+	        fail(function (error) {
+	            console.log("There was an error");
+	            console.log("status:  " + error.status);
+	            console.log(error.message);
+	            
+	        });
+
+	        console.log("Returned from the ajax add method");
+        // This is the end of the AJAX call to add an item to the list.
+        // ****************************************************
 	    	
 	    	let newName = this.refs.myInput.value;
 	    	let notesArr = this.state.list;
@@ -63,7 +93,27 @@ class ItemList extends React.Component
 
 	    this.delete_callback = (index) =>
 	    {
-	    	
+	    	// Adding the delete ajax call
+	    	// *************************************************
+	    	$.ajax({url: 'api/deleteItem', type: 'GET',
+            data: {"houseID":"1234","name":"bread",
+                "quantity":"2","upcCode":"","note":"","marked":false,"imageURL":""}}).
+
+        done (function(result){
+            console.log("Did deleteItem");
+            console.log("Result is ");
+            console.log(result);
+
+        }).
+        fail( function(data)
+        {
+            console.log("There was an error");
+            console.log("status:  " + data.status);
+            console.log("status text:  " + data.statusText);
+
+        });
+
+        // *******************************************************
 
 	    	let notesArr = this.state.list;
 	    	

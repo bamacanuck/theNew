@@ -29,7 +29,7 @@ class ListItem extends React.Component
 
 	handleDelete = (event) =>
 	{
-		this.props.delete_callback(this.props.index);
+		this.props.delete_callback(this.props.name);
 	};
 
     // The render method returns the JSX that should be rendered
@@ -46,22 +46,10 @@ class ListItem extends React.Component
 	    		size="30"
 	    		readOnly
 	    		id="list_item_name" 
-	    		className={this.state.itemClassName}></input>
-
-
-	    		{/* The text input that has the item name */}
-	    		<input type="text" 
-	   			value={this.props.quantity}
-	    		size="3"
-	    		id="list_item_quantity" 
-	    		onChange={this.handleQuantityChange} 
-	    		className={this.state.itemClassName}></input>
-
-	    	{/* The button for editing an item's. quantity */}
-	    		<button onClick={this.handleEdit}>Edit</button>
+	    		className={this.state.itemClassName}></input>	
 
 	    	{/* The button for deleting an item. */}
-	    		<button onClick={this.handleDelete}>&theta;</button>
+	    		<button onClick={this.handleDelete}>X</button>
 
 	    	
 	    	</div>

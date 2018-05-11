@@ -1,1 +1,9 @@
+# Ignore the node modules directory
 node_modules/
+
+#Ignore the iNeed2 files
+iNeed2_Resources/
+/iNeed2.html
+
+#Ignore the json config file
+config/

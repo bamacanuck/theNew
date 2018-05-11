@@ -159,6 +159,9 @@ class ItemList
         {
             let i = -1;
 
+            console.log("At the beginning of the deleteItem method of the list, the list is");
+            console.log(this.list);
+
             // Test the incoming parameter
             this.testIncomingString(incomingItemName);
 
@@ -168,7 +171,10 @@ class ItemList
             i = this.getIndexOfItem(incomingItemName);
 
             // Delete the item
-            this.list.slice(i,1);
+            this.list.splice(i,1);
+
+            console.log("At the end of the deleteItem method of the list, the list is");
+            console.log(this.list);
             
         }; // End of this.deleteItem()
 
@@ -354,6 +360,7 @@ class ItemList
         {
             let       i = -1;
             const count = this.list.length;
+            
 
             // Test the incoming parameter
             this.testIncomingString(incomingItemName);
@@ -361,8 +368,10 @@ class ItemList
             // Look for the item
             for(i = 0; i < count; ++i)
             {
-                if(this.list.name === incomingItemName)
+                
+                if(this.list[i].name === incomingItemName)
                 {
+                    
                     break;
                 }
             }

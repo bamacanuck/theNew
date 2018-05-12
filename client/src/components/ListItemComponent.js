@@ -2,7 +2,19 @@ import React from "react";
 
 // The css styling for this component is in the ../styles/TextAreaType1.css file
 
+import WebFont from 'webfontloader';
 
+WebFont.load({
+  google: {
+    families: ['Sedgwick Ave Display:300,400,700', 'sans-serif', 'cursive']
+   
+  }
+});
+
+const hStyle = {
+  fontFamily: "Shadows Into Light" ,
+  fontSize: 40
+};
 
 // By extending the React.Component class, TextArea inherits functionality from it
 class ListItem extends React.Component 
@@ -41,7 +53,7 @@ class ListItem extends React.Component
 	    	<div className="ListItem">  
 
 	    		{/* The text input that has the item name */}
-	    		<input type="text" 
+	    		<input type="text" style={hStyle}
 	   			value={this.props.name}
 	    		size="30"
 	    		readOnly

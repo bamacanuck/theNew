@@ -7,9 +7,28 @@ import {
 import { auth, db } from '../firebase/index';
 import * as routes from '../constants/routes';
 
+import WebFont from 'webfontloader';
+WebFont.load({
+  google: {
+    families: ['Shadows Into Light:300,400,700', 'sans-serif', 'cursive'],
+   families: ['Sedgwick Ave Display:300,400,700', 'sans-serif', 'cursive']   
+  }
+});
+
+const hStyle = {
+  fontFamily: "Sedgwick Ave Display" ,
+  fontSize: 60
+};
+
+const pStyle = {
+  fontFamily: "Shadows Into Light" ,
+  fontSize: 20,
+  margin: 5  
+};
+
 const SignUpPage = ({ history }) =>
   <div>
-    <h1>SignUp</h1>
+    <h1 style= {hStyle}>SignUp</h1>
     <SignUpForm history={history} />
   </div>
 
@@ -81,7 +100,6 @@ class SignUpForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
           value={username}
           onChange={event => this.setState(updateByPropertyName('username', event.target.value))}
           type="text"
@@ -116,7 +134,7 @@ class SignUpForm extends Component {
 }
 
 const SignUpLink = () =>
-  <p>
+  <p style={pStyle}>
     Don't have an account?
     {' '}
     <Link to={routes.SIGN_UP}>Sign Up</Link>

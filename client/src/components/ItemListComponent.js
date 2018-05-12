@@ -2,6 +2,32 @@ import React from "react";
 import  ListItem from "./ListItemComponent";
 import $ from 'jquery';
 
+
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Sedgwick Ave Display:300,400,700', 'sans-serif', 'cursive'],
+    families: ['Shadows Into Light:300,400,700', 'sans-serif', 'cursive']
+   
+  }
+});
+
+const hStyle = {
+  fontFamily: "Sedgwick Ave Display" ,
+  fontSize: 40
+};
+
+const bStyle = {
+  fontFamily: "Sedgwick Ave Display" ,
+  fontSize: 30
+};
+
+const tStyle = {
+  fontFamily: "Shadows Into Light" ,
+  fontSize: 30
+};
+
 // By extending the React.Component class, ItemList inherits functionality from it
 class ItemList extends React.Component 
 {
@@ -126,19 +152,19 @@ class ItemList extends React.Component
 
 	    return (
 	    	<div>
-				<h1> Shopping List</h1>
+				<h1 style= {hStyle}> Shopping List</h1>
 
 	    		{items}
 	    	
 	    		{/* The text input that will the new added item name */}
-		    		<input type="text" className="form-control" 
+		    		<input type="text" className="form-control" style = {tStyle}
 		    		id="newItemID"
 		    		ref="myInput"
 		   			value={this.state.index}
 		    		size="30"></input>
 
 	    		{/* The button for adding an item. */}
-	    		<button onClick={this.handle_Add}>Add Item</button>
+	    		<button style = {bStyle} onClick={this.handle_Add}>Add Item</button>
 	    	</div>
 
 	    ) // End of return ( ...

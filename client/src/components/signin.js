@@ -6,9 +6,28 @@ import { PasswordForgetLink } from './forgetPassword';
 import { auth } from '../firebase/index';
 import * as routes from '../constants/routes';
 
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Shadows Into Light:300,400,700', 'sans-serif', 'cursive'],
+    families: ['Sedgwick Ave Display:300,400,700', 'sans-serif', 'cursive']   
+  }
+});
+
+const hStyle = {
+  fontFamily: "Sedgwick Ave Display" ,
+  fontSize: 60
+};
+
+const pStyle = {
+  fontFamily: "Shadows Into Light" ,
+  fontSize: 20
+};
+
 const SignInPage = ({ history }) =>
   <div className="jumbotron">
-    <h1>Sign In</h1>
+    <h1 style={hStyle}>Sign In</h1>
     <SignInForm history={history} />
     <PasswordForgetLink />
     <SignUpLink />
@@ -71,12 +90,14 @@ class SignInForm extends Component {
           onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
           type="text"
           placeholder="Email Address"
+          name = "email"
         />
         <input
           value={password}
           onChange={event => this.setState(updateByPropertyName('password', event.target.value))}
           type="password"
           placeholder="Password"
+          name = "password"
         />
         <button className="btn btn-primary" disabled={isInvalid} type="submit">
           Sign In

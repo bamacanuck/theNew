@@ -1,8 +1,11 @@
 
 const router = require("express").Router();
 
-const houses = require("./houses");
-const users = require("./user");
-const houseUserRelationship = require("./house-user-relationship");
-
+const housesRoutes = require("./houses");
+// const usersRoutes = require("./user");
+// const houseUserRelationshipRoutes = require("./house-user-relationship");
+router.use("/ItemList", housesRoutes);
 module.exports = router;
+
+
+

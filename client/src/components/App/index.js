@@ -16,6 +16,13 @@ import AccountPage from '../account';
 import withAuthentication from '../Session/withAuthentication';
 import * as routes from '../../constants/routes';
 import './index.css';
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Titillium Web:300,400,700', 'sans-serif']
+  }
+});
 
 const App = () =>
   <Router>

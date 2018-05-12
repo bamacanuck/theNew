@@ -7,6 +7,21 @@ import AuthUserContext from './Session/AuthUserContext';
 import SignOutButton from './signout';
 import * as routes from '../constants/routes';
 
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    
+    families: ['Shadows Into Light:300,400,700', 'sans-serif', 'cursive']
+  }
+});
+
+
+const liStyle = {
+  fontFamily: "Shadows Into Light" ,
+  fontSize: 40
+};
+
 const Navigation = () =>
   <AuthUserContext.Consumer>
     {authUser => authUser
@@ -17,19 +32,18 @@ const Navigation = () =>
 
 const NavigationAuth = () =>
   <Navbar>
-  <Navbar.Header>
+  <Navbar.Header >
     <Navbar.Brand>
-      <a href="#home">Shopin</a>
+      <a href="#home"></a>
     </Navbar.Brand>
   </Navbar.Header>
-  <Nav>
-    <li><Link to={routes.LANDING}>Landing</Link></li>
-    <li><Link to={routes.HOME}>Home</Link></li>
-    <li><Link to={routes.ACCOUNT}>Account</Link></li>
-    <li><Link to={routes.LIST}>itemList</Link></li>
-    <li><Link to={routes.ITEMLIST}>Your List</Link></li>
-    <li><SignOutButton /></li>
-    </Nav>
+   <Nav>
+   <li style ={liStyle}><SignOutButton /></li>
+    <li class = "nav-item nav-fill" style ={liStyle}><Link to={routes.LANDING}>Landing</Link></li>
+    <li class = "nav-item nav-fill" style ={liStyle}><Link to={routes.ACCOUNT}>Account</Link></li>
+    <li class = "nav-item nav-fill" style ={liStyle}><Link to={routes.ITEMLIST}>Your List</Link></li>
+    
+  </Nav>
 </Navbar>;
 
 const NavigationNonAuth = () =>
@@ -42,8 +56,8 @@ const NavigationNonAuth = () =>
   </Navbar.Header>
   <Nav>
 
-    <li><Link to={routes.LANDING}>Landing</Link></li>
-    <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+    <li class nav-item style ={liStyle}><Link to={routes.LANDING}>Landing</Link></li>
+    <li class nav-item style ={liStyle}><Link to={routes.SIGN_IN}>Sign In</Link></li>
   
      </Nav>
 </Navbar>;

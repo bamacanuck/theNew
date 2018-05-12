@@ -3,9 +3,23 @@ import { Link } from 'react-router-dom';
 
 import { auth } from '../firebase/index';
 import * as routes from '../constants/routes';
+import WebFont from 'webfontloader';
+WebFont.load({
+  google: {
+    families: ['Shadows Into Light:300,400,700', 'sans-serif', 'cursive']
+   
+  }
+});
+
+
+const pStyle = {
+  fontFamily: "Shadows Into Light" ,
+  fontSize: 20,
+  margin: 5  
+};
 
 const PasswordForgetPage = () =>
-  <div>
+  <div style={pStyle}>
     <h1>PasswordForget</h1>
     <PasswordForgetForm />
   </div>
@@ -49,7 +63,7 @@ class PasswordForgetForm extends Component {
     const isInvalid = email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
+      <form style={pStyle} onSubmit={this.onSubmit}>
         <input
           value={this.state.email}
           onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
@@ -67,7 +81,7 @@ class PasswordForgetForm extends Component {
 }
 
 const PasswordForgetLink = () =>
-  <p>
+  <p style = {pStyle}>
     <Link to={routes.PASSWORD_FORGET}>Forgot Password?</Link>
   </p>
 
